@@ -1,6 +1,10 @@
 
 @media (max-width: 768px) {
 
+    body {
+        background-image: url("../images/dota-background.jpg");
+    }
+
     #main-wrapper {
         margin: 0;
         padding: 0;
@@ -22,24 +26,97 @@
     }
 
     #main-content {
-        border-bottom: 2px solid #C33D2B;
-        border-left: 2px solid #C33D2B;
-        border-right: 2px solid #C33D2B;
+        border-left: 2px solid #8e2c1f;
+        border-right: 2px solid #8e2c1f;
+        border-bottom: 2px solid #8e2c1f;
+        background-image: url("../images/dota-background.jpg");
+        background-repeat: no-repeat;
+        background-color: #2D0007;
+    }
+
+    .left-side-image {
+        width: 100%;
+    }
+
+    .right-side-image {
+        width: 100%;
+    }
+
+    body {
+        background-image: url("../images/bg_main.jpg");
+        background-size: 100%;
     }
 }
 
+html {
+    height: 100%;
+    overflow-y: scroll;
+}
+
 body {
-    background-image: url("../bg_main.jpg");
+    height: 100%;
+}
+
+.navbar {
+    background-image: url('../images/noise-background.jpg');
+    background-color: #F8F8F8;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #555;
+    background-color: #E7E7E7;
+    opacity: 0.6;
+}
+
+.navbar-default .navbar-nav > .active > a:hover {
+    color: #555;
+    background-color: #E7E7E7;
+    opacity: 1;
+}
+
+.left-side-image {
+    margin-top: 25px;
+    border: 1px solid #F8F8F8;
+}
+
+.right-side-image {
+    margin-top: 25px;
+    border: 1px solid #F8F8F8;
 }
 
 #main-wrapper {
     position: absolute;
     top: 50px;
-    bottom: 50px;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 #main-content {
+    padding-top: 10px;
     height: 100%;
-    background-color: #CCC;
+    min-height: 100%;
+}
+
+/* news.css */
+
+.news-post {
+    background-color: rgba(248,248,248,0.6);
+    color: #333;
+}
+
+.post-icon {
+    font-size: 28px;
+}
+
+hr {
+    border-color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-body-wrapper {
+    padding-top: 15px;
+    text-align: justify;
+    font-size: 16px;
 }
