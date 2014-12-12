@@ -1,13 +1,16 @@
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
     body {
         background-image: url("../images/dota-background.jpg");
+        background-repeat: no-repeat;
+        background-color: #2D0007;
     }
 
     #main-wrapper {
         margin: 0;
         padding: 0;
+        /*padding-top: 50px;*/
     }
 
     .nav-profile-image {
@@ -17,12 +20,21 @@
     #main-content {
         border: none;
     }
+
+    .navbar {
+        font-size: 24px;
+    }
+
+    nav button {
+
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 993px) {
     .nav-profile-image {
         height: 40px;
         margin-top: 5px;
+        margin-right: 5px;
     }
 
     #main-content {
@@ -98,25 +110,13 @@ body {
     min-height: 100%;
 }
 
-/* news.css */
-
-.news-post {
-    background-color: rgba(248,248,248,0.6);
+.content-block {
+    background-color: rgb(248,248,248);
     color: #333;
-}
-
-.post-icon {
-    font-size: 28px;
 }
 
 hr {
     border-color: #333;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.post-body-wrapper {
-    padding-top: 15px;
-    text-align: justify;
-    font-size: 16px;
 }

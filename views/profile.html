@@ -1,0 +1,95 @@
+<div class="well">
+    <div class="container-fluid">
+
+        <div class="tabbable">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="/profile#general-info" data-toggle="tab">General Info</a></li>
+                    <li><a href="/profile#player-info" data-toggle="tab">Player Info</a></li>
+                    <li><a href="/profile-info#team-info" data-toggle="tab">Team Info</a></li>
+                </ul>
+
+                <div class="tab-content">
+                        <div id="general-info" class="tab-pane active container-fluid">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <img class="img-thumbnail profile-pic center-block" src="images/default_pic.png" />
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-2">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Name</li>
+                                    <li class="list-group-item">Alias</li>
+                                    <li class="list-group-item">Gender</li>
+                                    <li class="list-group-item">Email</li>
+                                    <li class="list-group-item">Age</li>
+                                    <li class="list-group-item">Country</li>
+                                    <li class="list-group-item">City</li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-7">
+                                <ul class="list-group">
+                                    <li class="list-group-item">{{ user.name }}</li>
+                                    <li class="list-group-item">{{ user.alias }}</li>
+                                    <li class="list-group-item">{{ user.gender }}</li>
+                                    <li class="list-group-item">{{ user.email }}</li>
+                                    <li class="list-group-item">{{ user.age }}</li>
+                                    <li class="list-group-item">{{ user.country }}</li>
+                                    <li class="list-group-item">{{ user.city }}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="player-info" class="tab-pane container-fluid">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <img class="img-thumbnail profile-pic center-block" src="images/default_pic.png" />
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Current Role</li>
+                                    <li class="list-group-item">Favourite Role</li>
+                                    <li class="list-group-item">Previous Role</li>
+                                    <li class="list-group-item">Recruit Status</li>
+                                    <li class="list-group-item">Steam ID</li>
+                                    <li class="list-group-item">DotaBuff</li>
+                                    <li class="list-group-item">DGL Profile</li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Solo Mid</li>
+                                    <li class="list-group-item">Solo Mid</li>
+                                    <li class="list-group-item">Support, Carry</li>
+                                    <li class="list-group-item">Not looking for recruitment</li>
+                                    <li class="list-group-item">STEAM_0:1:31923048</li>
+                                    <li class="list-group-item"><a href="http://www.dotabuff.com/players/63846097" target="_blank">View DotaBuff</a></li>
+                                    <li class="list-group-item"><a href="http://www.dogamingleague.co.za/_player.php?p=34060" target="_blank">View Profile</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="team-info" class="tab-pane container-fluid">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <img class="img-thumbnail profile-pic center-block" src="images/default_pic.png" />
+                            </div>
+                            <div class="col-xs-4 col-sm-4 col-md-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Current Team</li>
+                                </ul>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Previous Teams</li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-8 col-sm-8 col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Free Agent</li>
+                                </ul>
+
+                                <ul class="list-group">
+                                    <li class="list-group-item">Super Derp Gaming</li>
+                                    <li class="list-group-item">Sounds Legit</li>
+                                    <li class="list-group-item">Cold Clutch Gaming</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+        </div>
+    </div>
+</div>

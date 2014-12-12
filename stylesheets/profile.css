@@ -1,0 +1,67 @@
+@media (max-width: 992px) {
+
+    .profile-pic {
+        margin-bottom: 15px;
+    }
+
+    .list-group-item {
+        font-size: 24px;
+    }
+
+    .nav-tabs {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 993px) {
+
+    .profile-pic {
+        margin-bottom: 0px;
+    }
+
+    .list-group-item {
+        font-size: 14px;
+    }
+
+    .nav-tabs {
+        font-size: 14px;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+.well {
+    background-color: transparent;
+    border: none;
+}
+
+.nav-tabs > li > a {
+    color: #F8F8F8;
+}
+
+.nav-tabs > li > a:hover {
+    cursor: pointer;
+    background-color: rgba(248,248,248,0.6);
+    color: #333;
+}
+
+.nav-tabs > li.active > a {
+    background-color: #F8F8F8;
+    color: #333;
+}
+
+.nav-tabs > li.active > a:hover {
+    color: #333;
+    background-color: #F8F8F8;
+    cursor: pointer;
+}
+
+.tab-content {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #F8F8F8;
+    background-color: #F8F8F8;
+}

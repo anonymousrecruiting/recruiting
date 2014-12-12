@@ -1,0 +1,78 @@
+<div class="well">
+    <div class="container-fluid">
+        <h3>Search Options</h3>
+        <hr />
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="alias">Alias</label>
+                    <input ng-model="searchText.alias" type="text" class="form-control" id="alias" placeholder="Alias"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input ng-model="searchText.name" type="text" class="form-control" id="name" placeholder="Name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="role">Role</label>
+                    <select ng-model="searchText.role" id="role" class="form-control">
+                        <option value="">Any</option>
+                        <option value="Solo Mid" >Solo Mid</option>
+                        <option value="Carry" >Carry</option>
+                        <option value="Farming Support" >Farming Support</option>
+                        <option value="Hard Support" >Hard Support</option>
+                        <option value="Offlane" >Offlane</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="team">Team</label>
+                    <input ng-model="searchText.current_team" type="text" class="form-control" id="team" placeholder="Current/Previous Team"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="well">
+    <div class="container-fluid">
+        <h3>Recruits</h3>
+
+        <hr />
+
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Alias</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Current Team</th>
+                    <th>Previous Team</th>
+                    <th>Country</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr dir-paginate="recruit in recruits | filter: searchText | itemsPerPage: page_size"">
+                    <td>{{ recruit.alias }}</td>
+                    <td>{{ recruit.name }}</td>
+                    <td>{{ recruit.role }}</td>
+                    <td>{{ recruit.current_team }}</td>
+                    <td>{{ recruit.previous_team }}</td>
+                    <td>{{ recruit.country }}</td>
+                    <td>{{ recruit.city }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr />
+
+        <dir-pagination-controls boundary-links="true" template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+
+    </div>
+</div>
