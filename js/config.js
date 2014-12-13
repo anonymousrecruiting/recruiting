@@ -20,6 +20,16 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             controller: 'recruitingController',
             css: 'recruiting.css'
         })
+        .when('/rankings', {
+            templateUrl: 'views/rankings.html',
+            controller: 'rankingsController',
+            css: 'rankings.css'
+        })
+        .when('/clans-and-teams', {
+            templateUrl: 'views/clans-and-teams.html',
+            controller: 'clansAndTeamsController',
+            css: 'clans-and-teams.css'
+        })
         .otherwise({
             redirectTo: '/news'
         });
@@ -32,7 +42,70 @@ app.controller('globalController', ['$scope', '$location', function($scope, $loc
     $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
-}])
+}]);
+
+app.controller('rankingsController', ['$scope', '$location', function($scope, $location){
+
+    //Pagination variables.
+
+    $scope.current_page = 1;
+    $scope.page_size = 20;
+
+    $scope.scrim = {
+        team_a : { team_id: 1, name: 'sdg', rating: 1400 },
+        team_b : { team_id: 2, name: 'sounds legit', rating: 1400 },
+        winner : 1
+    };
+
+    $scope.scrim2 = {
+        team_a : { team_id: 1, name: 'sdg', rating: 1400 },
+        team_b : { team_id: 2, name: 'sounds legit', rating: 1400 },
+        winner : 2
+    };
+
+    $scope.updateRankings = function(scrim) {
+        var rating_a = scrim.team_a.rating;
+        var rating_b = scrim.team_b.rating;
+
+        var prob_a = 1/(1 + Math.pow(10, (rating_b - rating_b) / 400));
+        var prob_b = 1/(1 + Math.pow(10, (rating_a - rating_b) / 400));
+
+        var average_rating = (rating_a + rating_b) / 2;
+        var k;
+
+        if(average_rating <= 2100) {
+            k = 32;
+        } else if(average_rating > 2100 && average_rating <= 2400) {
+            k = 24;
+        } else if(average_rating > 2400) {
+            k = 16;
+        }
+
+        if(scrim.winner == scrim.team_a.team_id) {
+            scrim.team_a.rating = scrim.team_a.rating + (k * (1 - prob_a));
+            scrim.team_b.rating = scrim.team_b.rating + (k * (0 - prob_b));
+        } else {
+            scrim.team_b.rating = scrim.team_b.rating + (k * (1 - prob_b));
+            scrim.team_a.rating = scrim.team_a.rating + (k * (0 - prob_a));
+        }
+
+        if(scrim.team_a.rating < 1000) {
+            scrim.team_a.rating = 1000;
+        }
+        if(scrim.team_b.rating < 1000) {
+            scrim.team_b.rating = 1000;
+        }
+
+        return [scrim.team_a, scrim.team_b];
+    }
+
+    console.log(JSON.stringify($scope.scrim));
+    console.log(JSON.stringify($scope.updateRankings($scope.scrim)));
+    console.log(JSON.stringify($scope.updateRankings($scope.scrim)));
+    console.log(JSON.stringify($scope.updateRankings($scope.scrim2)));
+    console.log(JSON.stringify($scope.updateRankings($scope.scrim2)));
+
+}]);
 
 app.controller('newsController', ['$scope', '$routeParams', function($scope, $routeParams){
 
@@ -161,9 +234,7 @@ app.controller('recruitingController', ['$scope', '$routeParams', function($scop
 
     $scope.current_page = 1;
     $scope.page_size = 20;
-
-
-}])
+}]);
 
 /* FACTORIES */
 

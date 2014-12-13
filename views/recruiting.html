@@ -1,6 +1,6 @@
 <div class="well">
     <div class="container-fluid">
-        <h3>Search Options</h3>
+        <h3>Filter Options</h3>
         <hr />
         <form class="form-inline" role="form">
             <div class="form-group">
@@ -44,8 +44,6 @@
 
         <hr />
 
-
-
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -59,7 +57,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr dir-paginate="recruit in recruits | filter: searchText | itemsPerPage: page_size"">
+                <tr dir-paginate="recruit in recruits | filter: searchText | itemsPerPage: page_size">
                     <td>{{ recruit.alias }}</td>
                     <td>{{ recruit.name }}</td>
                     <td>{{ recruit.role }}</td>

@@ -1,0 +1,46 @@
+<div class="well">
+    <div class="container-fluid">
+        <h3>Filter Options</h3>
+        <hr />
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <div class="input-group">
+                    <label for="team_name">Team Name</label>
+                    <input ng-model="searchText.team_name" type="text" class="form-control" id="team_name" placeholder="Team Name"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="well">
+    <div class="container-fluid">
+        <h3>Registered Clans</h3>
+
+        <hr />
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Clan Name</th>
+                <th>Teams</th>
+                <th>Average Team Rating</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr dir-paginate=" | filter: searchText | itemsPerPage: page_size">
+                <td style="vertical-align: middle;"><img class="img-circle" style="width: 100px;" src="images/default_pic.png"/></td>
+                <td style="vertical-align: middle;">Super Derp Gaming</td>
+                <td style="vertical-align: middle;">2</td>
+                <td style="vertical-align: middle;">2135</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr />
+
+        <dir-pagination-controls boundary-links="true" template-url="js/dirPagination.tpl.html"></dir-pagination-controls>
+
+    </div>
+</div>
